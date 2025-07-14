@@ -1,0 +1,33 @@
+Condition:
+
+You are given a conceptual infinite binary search tree centered at 0.
+The tree grows dynamically: each node follows standard BST rules—left child is smaller, right child is larger.
+
+Given an array target[], you need to insert each element into this tree (starting with 0 as the root) without reusing values, and return the cost of each insertion.
+
+The insertion cost is the number of steps (jumps) needed to find the correct insertion position from the root.
+
+
+Examples:
+
+Input: target = [3, -1, 4, -2]
+Output: [1, 1, 2, 2]
+
+Explanation:
+- Insert 3 → [0 → 3] → 1 step
+- Insert -1 → [0 → -1] → 1 step
+- Insert 4 → [0 → 3 → 4] → 2 steps
+- Insert -2 → [0 → -1 → -2] → 2 steps
+
+Restrictions:
+1 <= target.length <= 10^4;
+-10^4 <= target[i] <= 10^4;
+
+Tree starts with a single root node 0.
+You can't insert the same number twice (if it's already in the tree, cost = 0).
+
+
+Algorithms for implementation:
+Binary Search Tree (BST) — dynamically build a tree, count the steps.
+AVL Tree / Balanced BST (Optional) — to support O(log n) efficient insertion
+HashSet for duplicates — to skip already inserted numbers.
